@@ -1,78 +1,68 @@
 /* 
-변수 : 특정 데이터 값을 임시로 저장하는 공간
+원시형 자료(primitive type) 특정값이 메모리에 바로 저장. 값만 저장 된것 
+1. 문자열(string)
+2. tntwk(number)
+3. 불린형, 참거짓형(boolean) = true, false
+4. underfined - 변수를 만들고 할당하지 않으면 underfined으로 저장됨, 에러상황
+5. null(object) - 갑싱 비어있긴 하지만 일부러, 명시적으로 값을 비워둔경우 
+- 메모리를 만들어야 하는데 값은 지금 없어서 넣지 않을때 일부러 비워둠 
 
-변수를 쓰는 이유
-1. 한번 찾은 데이터를 재활용 하기 위해서
-2. 자주 쓰는 데이터 값을 효율적으로 관리 하기 위해서 
 
-var 변수명 = 대입할 값;
-
-변수 선언은 3가지 값이 있다 
-변수에서 문자는 "", '',``으로 감싸야 한다. 쌍따옴표, 홀따옴표(작은 따옴표), 억음부호(backick)쌍과 홀은 구분이 없다 
-다만 억음 부호는 ES6이후 부터 사용 가능 하다. IE는 사용이 불가 하다 
-억음 부호는 두 따옴표 밖에서 또 묶어야 할때, 중간에서 개행 될때, 따옴표가 사용될 수 없을때 이런 경우 억음 부호를 쓴다 
-
-변수가 중복되면 마지막에 코딩한 값이 덮어 쓴다 
-
-변수선언 방법에는 
-선언만 하고 나중에 값을 부여하는 방법과 
-var title;
-titke = 36;
-
-선언과 동시에 값을 부여하는 방법이 있다 
-
-var title2 = `aba`;
-
-변수의 덮어쓰는 것을 방지 하기 위해서 절대 바뀌지 않는 상수로 
-const 라는 변수 선언 방법을 사용한다 
-
-let 은 var의 호이스팅 이라는 버그를 해결한 방법으로 변수의 덮어 쓰는 것이 가능하다 
-
-변수명 작성시 유의점
-1. 숫자로 시작할수 없다 
-2. 특수문자 삽입불가 ($ _가능)
-3. "-" 사용 불가 (예약어)
-4. 예약어 모두 안됨
-5. 대소문자는 다른 언어 구분이 되어야 한다 apple Apple 다른 변수가 된다 
-6. 한글은 가능 하지만 피하는게 좋다 
-
-변수들끼리 연산 가능하다 
-
+참조형 자료 (reference type)값의 참조값, 주소값만 메모리에 저장 되는것
+5. null(object) - 값이 비어있긴 하지만 일부러 , 명시적으로 값을 비워둔 경우 
+- 메모리는 만들어야 하는데 값은 지금 없어서 넣지 않을때 일부러 비워둠 
+1. 배열(array) = 여러개의 값들을 그룹으로 묶어서 저장된 형태 
+(각 값들은 순서값으로 탐색 가능하다)
+2. 객체(object) - 여러개의 값들을 그룹으로 묶어서 저장된 형태 
+(각 값들 마다 고유의 key값을 넣어서 저장하고 탐색 할때도 key값으로 탐색)
 */
 
-const name = "MIKE";
-//const message = "my name is $(name)";
-let message = `my name is ${name}`;
-console.log(message);
-alert(123);
 
-const title = document.querySelector("title")
 
-let num1 = 2;
+// let num1 = "2"; //문자 
+// let num2 = 2; //숫자 
+// let isOk = true; //boolean
+// let error;
+// let isBlank = null
+
+// console.log(typeof num1);
+// console.log(typeof num2);
+// console.log(typeof isOk);
+// console.log(typeof error);
+// console.log(typeof isBlank);
+
+// 같은 성격의 일련의 데이터들은 그룹 형태로 저장하면 -array
+let colors = ["red", "yellow", "brown","blue"];
+console.log(colors[0]);
+console.log(colors[3]);
+
+//let items = [{},{},{},{}];
+
+let student1 = {
+  name: "홍길동",
+  age : 20,
+  address: "Seoul",
+  isMale:true
+};
+//성격이 다른 데이터들의 prop(erty)에 담아서 구조적으로 저장
+console.log(student1.name);
+
+//형변환 : 연산 되는 숫사 num2를 강제로 문자열로 변형 시켜서 두개의 문자로 인식하고 서로 이어 주는것 
+
+let num1 = "2";
 let num2 = 3;
-let total = num1 + num2;
-console.log(total);
+let num3 = 5;
+let result = num1 + num2;
+let result2 = num2 + num1;
+console.log(result);
+console.log(result2);
 
-const goal = 3;
-let ral = "ralral";
+let result3 = num1 + num2 + num3;  //235
+let result4 = num3 + num2 + num1; //82
+console.log(result3);
+console.log(result4);
+
 
 /*
-변수의 유효 범위(scope)
-- 지역 변수(local variable) : 한지역(블록) 안에서 선언된 변수로 해당 블록 안에서만 사용된다
-- 전역변수(global variable) : 블록 밖에서 선언된 변수로 오디서든지 읽힌다 
-
-전역 변수가 필요한 경우 
--특정 변수 값을 여러개의 서로 다른 함수(블록)들이 공유 해야 할때
-
-2015년 es6 자바 스크립트가 업데이트 되면서 var를 let으로 바꿔서 쓰는 운동이 있었다
-그러면 var에는 무슨 문제가?
-
-호이스팅
-자바스크립트는 실행전에 변수들을 조사한다 - 변수들이 선언된 구역에 상관없이 모두 끌어 올려져서 상단에서 변수가 선언 되는 것처럼 보이는 현상 
-호이스팅시 변수의 선언과 초기화를 동시에 한다 
-- 함수가 실행 되기 전에 안에 있는 변수들의 범위를 최상단으로 끌어 올려지는것 
-- 즉, 블록 안에서 선언된 지역 변수 값이 블록 바깥으로 강제로 끌어 올려져서 전역화 되어 버림 
-
-- 대표적으로 일반 함수 블록이 아닌 조건문, 반복문 안에 있는 지역 변수는 호이스팅이 발생한다. function구문은 제외 
 
 */
