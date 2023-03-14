@@ -1,46 +1,38 @@
 /* 
-조건문
-특정 조건마다의 분기를 설정해서 코드 흐름에 변화를 주는것
+함수 정의 : 미리 function 키워드로 자주 쓰는 코드 들을 묶어주는 행위 
+- 함수가 선언된 위 치와 상관없이 호출만 하면 사용이 가능함 
+함수 호출 : 미리 정의 되어 있는 함수를 호출해서 사용함. 호출 해야지만 비로소 실행됨 
 
-1. 조건식 하나에 참인 경우에만 사용할 경우 
-if(조건식) {
-  조건식이 참이면 이곳의 구문이 실행이 됨 
-  조건식이 거짓이면 이곳의 구문은 무시 
-} => 중괄호를 생략 가능, 거의 생략함 
-
-2. 조건식 하나에 참인 경우와 거짓인 경우를 모두 사용할 경우 
-if(조건식){
-  조건식이 참이면 이곳의 구문이 실행이 됨 
-  조건식이 거짓이면 이곳의 구문은 무시 
-}else{
-  조건식이 거짓 이면 이곳의 구문을 실행
-}
-3. 조건식이 2개인 경우
-
-fi(조건식1){
-  조건식이 참이면 이곳의 구문이 실행이됨
-  조건식이 거짓이면 이곳의 구문은 무시 
-}else if(조건식2){
-  조건식2이 참이면 이곳의 구문이 실행이 됨 
-  조건식2이 거짓이면 이곳의 구문은 무시
-}else{
-  위의 조건1,2가 모두 거짓일때 무조건 이곳의 구문을 실행하고 종료 
-}
+함수의 인수 (매개변수, 파라미터)
+-
 
 */
 
-let now = new Date();
-now = now.getHours();
-console.log(now);
 
-const main = document.querySelector("main");
+plus(rr, dssf);
+function mmm(파라미터) {
+  실제 사용될 코드들 
+};
+function plus(num1, num2) {
+  let result = num1 + num2;
+}
+calc(44, 12, "+")
 
-if (now >= 0 && now < 9) {
-  main.style.backgroundColor = "lightblue"
-}
-if (now >= 9 && now <16) {
-  main.style.backgroundColor = "pink";
-}
-if (now >= 16 && now < 24) {
-  main.style.backgroundColor = "red";
+
+! ==
+
+calc(123, dsafg, sg);
+function calc(num1, num2, type) {
+  let typeNum1 = typeof num1;
+  let typeNum2 = typeof num2;
+  let typeType = typeof type;
+  if (typeNum1 !== "number" || typeNum2 !== "number" || typeType !== "string") {
+
+    console.error("첫번째, 두번째 인수로는 숫자만 입력하고, 세번째 인수는 문자기호를 문자 형태로 입력 하세요");
+    
+  } else {
+    if (type === "+") num1 + num2;
+    if (type === "-") num1 - num2;
+  }
+
 }
