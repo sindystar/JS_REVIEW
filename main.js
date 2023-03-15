@@ -1,38 +1,71 @@
 /* 
-함수 정의 : 미리 function 키워드로 자주 쓰는 코드 들을 묶어주는 행위 
-- 함수가 선언된 위 치와 상관없이 호출만 하면 사용이 가능함 
-함수 호출 : 미리 정의 되어 있는 함수를 호출해서 사용함. 호출 해야지만 비로소 실행됨 
+배열
+-인덱스
+-길이
 
-함수의 인수 (매개변수, 파라미터)
--
 
 */
+// let arr = [1, 2, 3];
+// console.log(arr.length);
 
+// const fruits = ["apple", 'melon', 'banana'];
 
-plus(rr, dssf);
-function mmm(파라미터) {
-  실제 사용될 코드들 
-};
-function plus(num1, num2) {
-  let result = num1 + num2;
+// fruits.push('melon');
+// console.log(fruits); //push 배열의 마지막에 추가 하는 매서드
+
+// fruits.pop(); //배열의 가장 마지막 값을 제거 
+// console.log(fruits);
+
+// fruits.unshift('grape'); //배열의 가장 앞쪽에 추가 하는 매서드
+// console.log(fruits);
+
+// fruits.shift(); //배열의 가장 앞쪽 값을 제거
+// console.log(fruits);
+
+//splice(인덱스, 삭제갯수, 삽입요소);
+// fruits.splice(1, 1, "orange");  //인덱스 1에서 부터 1개만 삭제하고 그자리에 오렌지를 추가
+// console.log(fruits);
+
+// fruits.splice(1, 1); // 인덱스 1에서 부터 1개만 삭제 
+// console.log(fruits);
+// fruits.splice(2); //인덱스 2에서 부터 모두 삭제 
+// console.log(fruits);
+
+// const fruits1 = ['1', '2', '3'];
+// const fruits2 = ['1', '2', '3'];
+
+// const newFruit = fruits1.concat(fruits2); //두배열 합치기
+// console.log(newFruit);
+
+//배열의 검색
+const fruits = ["apple", 'melon', 'banana', 'apple'];
+
+console.log(fruits.indexOf('apple')); //배열에서 처음으로 발견된 값의 인덱스를 반환하고 처음으로 만난것만 찾고 종료 
+
+console.log(fruits.indexOf('orange')); //찾는 값이 없으면 -1을 반환 한다
+
+console.log(fruits.lastIndexOf("apple")); // 배열에서 마지막으로 발견된 값의 인덱스를 반환함 
+
+console.log(fruits.includes("apple"));
+
+console.log(fruits.includes("orange"));
+
+//반복문
+/*
+반복문의 종류
+for 기본 for문
+for(let  반복하기 위한 변수 초기 순서값; 반복횟수 지정; 변수 값의 증감;) {
+  반복하는 내용들
 }
-calc(44, 12, "+")
-
-
-! ==
-
-calc(123, dsafg, sg);
-function calc(num1, num2, type) {
-  let typeNum1 = typeof num1;
-  let typeNum2 = typeof num2;
-  let typeType = typeof type;
-  if (typeNum1 !== "number" || typeNum2 !== "number" || typeType !== "string") {
-
-    console.error("첫번째, 두번째 인수로는 숫자만 입력하고, 세번째 인수는 문자기호를 문자 형태로 입력 하세요");
-    
-  } else {
-    if (type === "+") num1 + num2;
-    if (type === "-") num1 - num2;
-  }
-
+for of
+for(let 반복하는 요소의 변수 of 배열이름){
 }
+for(let el of fruits){
+}
+forEach 배열에 특화된 반복문 형태 
+배열 이름.forEach(()=>{}); 화살표 함수
+배열 이름.forEach(function(){});
+
+map =>리엑트 전용
+배열 이름.map(()=>{});
+*/
