@@ -10,7 +10,7 @@ link.addEventListener("click", e => {
 /*
 이벤트 대상.addEventlistener("이벤트명",(전달될값)=>{실행구문})
 */
-const box = document.querySelector("box");
+const box = document.querySelector("#box");
 
 box.addEventListener("mouseenter", () => {
   box.style.backgroundColor = "pink";
